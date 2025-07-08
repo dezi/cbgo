@@ -74,7 +74,7 @@ func BTCentralManagerDidDiscoverPeripheral(cmgr unsafe.Pointer, prph unsafe.Poin
 		af.Connectable = &b
 	}
 
-	af.ServiceUUIDs = mustStrArrToUUIDs(&advData.svc_uuids)
+	af.ServiceUUIDs, _ = strArrToUUIDs(&advData.svc_uuids)
 	svcDataUUIDs := mustStrArrToUUIDs(&advData.svc_data_uuids)
 
 	for i, u := range svcDataUUIDs {
